@@ -1,3 +1,5 @@
+// Requisito 11
+
 function formatNumber(arr) {
   const ddd = `(${arr[0]}${arr[1]})`
   let firstPartOfTheNumber = ''
@@ -45,4 +47,32 @@ function generatePhoneNumber(arr) {
   }
 
   return formatNumber(arr)
+}
+
+// Requisito 12
+
+function triangleCheck(lineA, lineB, lineC) {
+  if (lineA < (lineB + lineC) && lineB < (lineA + lineC) && lineC < (lineA + lineB)) {
+    return true;
+  }
+  return false;
+}
+
+// Requisito 13
+
+function hydrate(string) {
+  let sumOfDrink = 0
+  string.split(' ').forEach(num => {
+    if (num === num.replace(/[^0-9]/g, '')) {
+      num = Number(num)
+    }
+    if (num >= 1 && num <= 9) {
+      sumOfDrink += num
+    }
+  })
+  if (sumOfDrink === 1) {
+    return `${sumOfDrink} copo de água`
+  } else {
+    return `${sumOfDrink} copos de água`
+  }
 }
